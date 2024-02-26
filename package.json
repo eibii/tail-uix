@@ -4,6 +4,7 @@
   "version": "0.0.1",
   "description": "Biblioteca de componentes Vue com Tailwindcss",
   "publishConfig": {
+    "access": "public",
     "registry": "https://npm.pkg.github.com/@eibii"
   },
   "author": "eibii Developer <dev@eibii.com> (https://www.eibii.com/)",
