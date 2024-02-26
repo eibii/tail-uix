@@ -1,10 +1,11 @@
 import { resolve } from "path";
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
+import dts from "vite-plugin-dts";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue()],
+  plugins: [vue(), dts()],
   build: {
     lib: {
       // Could also be a dictionary or array of multiple entry points
@@ -12,7 +13,7 @@ export default defineConfig({
       formats: ["es", "cjs", "umd"],
       name: "TailUIX",
       // the proper extensions will be added
-      fileName: "tail-uix",
+      fileName: (format) => `tail-uix.${format}.js`,
     },
     rollupOptions: {
       // make sure to externalize deps that shouldn't be bundled
@@ -26,5 +27,7 @@ export default defineConfig({
         },
       },
     },
+    sourcemap: true,
+    emptyOutDir: true,
   },
 });
