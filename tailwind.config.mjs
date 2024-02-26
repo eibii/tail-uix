@@ -1,0 +1,38 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  purge: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
+  content: [],
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        primary: "#EB6830",
+        secondary: "#35495E",
+        accent: "#647EFF",
+        "dark-50": "#272935",
+        "dark-100": "#232530",
+        "dark-200": "#1f212a",
+        "dark-300": "#1b1d25",
+        "dark-400": "#171920",
+        "dark-500": "#14151b",
+        "dark-600": "#101015",
+        "dark-700": "#0c0c10",
+        "dark-800": "#08080b",
+        "dark-900": "#040405",
+        "dark-950": "#000000",
+        "light-50": "#ffffff",
+        "light-100": "#e9eaeb",
+        "light-200": "#d4d4d7",
+        "light-300": "#bebfc2",
+        "light-400": "#a9a9ae",
+        "light-500": "#93949a",
+        "light-600": "#7d7f86",
+        "light-700": "#686972",
+        "light-800": "#52545d",
+        "light-900": "#3d3e49",
+        "light-950": "#32343F",
+      },
+    },
+  },
+  plugins: [],
+};
