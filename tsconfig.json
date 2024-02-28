@@ -13,6 +13,7 @@
     "isolatedModules": true,
     "noEmit": true,
     "declaration": true,
+    "outDir": "./dist",
     "typeRoots": ["./dist/main.d.ts"],
     "jsx": "preserve",
 
