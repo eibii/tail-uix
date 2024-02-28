@@ -1,4 +1,4 @@
-import { resolve } from "path";
+import { fileURLToPath, URL } from "url";
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import ts2 from "rollup-plugin-typescript2";
@@ -9,7 +9,7 @@ export default defineConfig({
     vue(),
     ts2({
       check: false,
-      include: ["src/components/*.vue", "src/main.ts"],
+      include: ["src/components/*.vue", "src/index.ts"],
       tsconfigOverride: {
         compilerOptions: {
           sourceMap: true,
@@ -23,11 +23,11 @@ export default defineConfig({
   build: {
     lib: {
       // Could also be a dictionary or array of multiple entry points
-      entry: resolve(__dirname, "src/main.ts"),
-      formats: ["es", "cjs", "umd"],
+      entry: "./src/index.ts",
+      formats: ["es", "cjs"],
       name: "TailUIX",
       // the proper extensions will be added
-      fileName: (format) => `tail-uix.${format}.js`,
+      fileName: (format) => (format === "es" ? "index.js" : "index.cjs"),
     },
     rollupOptions: {
       // make sure to externalize deps that shouldn't be bundled
@@ -41,7 +41,10 @@ export default defineConfig({
         },
       },
     },
-    sourcemap: true,
-    emptyOutDir: true,
+  },
+  resolve: {
+    alias: {
+      "@": fileURLToPath(new URL("./src", import.meta.url)),
+    },
   },
 });

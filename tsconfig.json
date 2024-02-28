@@ -14,7 +14,7 @@
     "noEmit": true,
     "declaration": true,
     "outDir": "./dist",
-    "typeRoots": ["./dist/main.d.ts"],
+    "typeRoots": ["./dist/index.d.ts"],
     "jsx": "preserve",
 
     /* Linting */
