@@ -1,7 +1,7 @@
 {
   "name": "@eibii/tail-uix",
   "private": false,
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Biblioteca de componentes Vue com Tailwindcss",
   "author": "ERC Dev <dev@eibii.com> (https://www.ercdev.com.br/)",
   "homepage": "https://tailuix.com",
@@ -51,6 +51,7 @@
     "@vitejs/plugin-vue": "^5.0.4",
     "autoprefixer": "^10.4.17",
     "postcss": "^8.4.35",
+    "rollup-plugin-typescript2": "^0.36.0",
     "sass": "^1.71.1",
     "tailwindcss": "^3.4.1",
     "typescript": "^5.2.2",
