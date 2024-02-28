@@ -1,7 +1,7 @@
 {
   "name": "@eibii/tail-uix",
   "private": false,
-  "version": "0.0.10",
+  "version": "0.0.12",
   "description": "Biblioteca de componentes Vue com Tailwindcss",
   "author": "ERC Dev <dev@eibii.com> (https://www.ercdev.com.br/)",
   "homepage": "https://tailuix.com",
