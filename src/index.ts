@@ -1,8 +1,6 @@
 import type { App } from "vue";
 
-import "./assets/css/build.css";
-
-import TXInput from "./components/TXInput";
+import TXInput from "./components/TXInput.vue";
 // exportação padrão com instalação automática
 export default {
   install(app: App): void {
