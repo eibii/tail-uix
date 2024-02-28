@@ -1,16 +1,33 @@
 <script setup lang="ts">
-import type { Props } from "./TXInput";
-
 import { onBeforeMount, ref, watch } from "vue";
 import { vMaska } from "maska";
 
 const emit = defineEmits(["update:modelValue", "onFocus", "onBlur", "onClick"]);
-const props = withDefaults(defineProps<Props>(), {
-  submitted: false,
-  type: "text",
-  disabled: false,
-  isShowPassword: false,
-});
+const props = withDefaults(
+  defineProps<{
+    modelValue?: string | number;
+    validate?: any;
+    submitted?: boolean;
+    type?: "text" | "password" | "number";
+    label?: string;
+    icon?: string;
+    disabled?: boolean;
+    required?: boolean;
+    isShowPassword?: boolean;
+    mask?: string;
+    texts: {
+      validateRequired: string;
+      validateEmail: string;
+      validateStrongPassword: string;
+    };
+  }>(),
+  {
+    submitted: false,
+    type: "text",
+    disabled: false,
+    isShowPassword: false,
+  }
+);
 const inputValue = ref();
 const acitve = ref(false);
 const runFocus = (event: FocusEvent) => {
