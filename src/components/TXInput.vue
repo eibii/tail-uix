@@ -2,8 +2,6 @@
 import { onBeforeMount, ref, watch } from "vue";
 import { vMaska } from "maska";
 
-import "../assets/css/build.css";
-
 const emit = defineEmits(["update:modelValue", "onFocus", "onBlur", "onClick"]);
 const props = withDefaults(
   defineProps<{
