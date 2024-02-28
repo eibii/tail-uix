@@ -1,6 +1,6 @@
 import type { App } from "vue";
 
-import "./assets/css/build.css";
+import "./assets/sass/tailwind.sass";
 
 import { TXInput } from "./components";
 // exportação padrão com instalação automática
