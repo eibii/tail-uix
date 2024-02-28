@@ -1,7 +1,7 @@
 {
   "name": "@eibii/tail-uix",
   "private": false,
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Biblioteca de componentes Vue com Tailwindcss",
   "author": "ERC Dev <dev@eibii.com> (https://www.ercdev.com.br/)",
   "homepage": "https://tailuix.com",
@@ -17,22 +17,18 @@
     "vue components",
     "tailwind components"
   ],
-  "main": "dist/index.umd.js",
   "files": [
     "dist/*"
   ],
   "exports": {
-    ".": {
-      "import": "./dist/tail-uix.es.js",
-      "require": "./dist/tail-uix.umd.js"
-    },
+    ".": "./dist/index.js",
     "./styles.css": "./dist/style.css"
   },
   "browser": {
     "./styles.css": "./dist/style.css"
   },
   "module": "./dist/tail-uix.es.js",
-  "types": "./dist/main.d.ts",
+  "types": "./dist/index.d.ts",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -56,7 +52,6 @@
     "tailwindcss": "^3.4.1",
     "typescript": "^5.2.2",
     "vite": "^5.1.4",
-    "vite-plugin-dts": "^3.7.3",
     "vitepress": "^1.0.0-rc.44",
     "vue-tsc": "^1.8.27"
   },
