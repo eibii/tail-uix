@@ -1,7 +1,7 @@
 {
   "name": "@eibii/tail-uix",
   "private": false,
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Biblioteca de componentes Vue com Tailwindcss",
   "author": "ERC Dev <dev@eibii.com> (https://www.ercdev.com.br/)",
   "homepage": "https://tailuix.com",
@@ -32,7 +32,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc && vite build",
+    "build": "vue-tsc --noEmit && npx tailwindcss -o src/assets/css/build.css --minify && vite build",
     "preview": "vite preview",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",

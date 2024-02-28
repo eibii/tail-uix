@@ -3,66 +3,66 @@
 @tailwind utilities
 
 @layer components
-  .custom-container
-    @apply container mx-auto px-4
+  .tx-custom-container
+    @apply tx-container tx-mx-auto tx-px-4
 
-  .field
-    @apply block mb-4 relative
+  .tx-field
+    @apply tx-block tx-mb-4 tx-relative
 
     & > span
-      @apply after:content-['*'] after:ml-0.5 after:text-red-500
+      @apply after:content-['*'] after:tx-ml-0.5 after:tx-text-red-500
 
     & > span, & > div:first-child
-      @apply absolute left-[12px] top-[4px] text-xs text-light-600 font-extralight
+      @apply tx-absolute tx-left-[12px] tx-top-[4px] tx-text-xs tx-text-light-600 tx-font-extralight
 
     & > i
-      @apply absolute right-[12px] top-[4px] text-lg leading-10 text-light-500
+      @apply tx-absolute tx-right-[12px] tx-top-[4px] tx-text-lg tx-leading-10 tx-text-light-500
 
   input[type="text"],
   input[type="password"],
   textarea
-    @apply transition-all ease-in-out delay-75 duration-100 appearance-none border border-transparent caret-primary rounded-xl block w-full pl-3 pt-5 pb-1 text-light-100 bg-dark-950/10 focus:outline focus:outline-4 focus:outline-primary/10 focus:border-primary focus:ring-primary disabled:bg-dark-50/40 disabled:cursor-not-allowed
+    @apply tx-transition-all tx-ease-in-out tx-delay-75 tx-duration-100 tx-appearance-none tx-border tx-border-transparent tx-caret-primary tx-rounded-xl tx-block tx-w-full tx-pl-3 tx-pt-5 tx-pb-1 tx-text-light-100 tx-bg-dark-950/10 focus:tx-outline focus:tx-outline-4 focus:tx-outline-primary/10 focus:tx-border-primary focus:tx-ring-primary disabled:tx-bg-dark-50/40 disabled:tx-cursor-not-allowed
 
-  .error
-    @apply border-red-700 #{!important}
+  .tx-error
+    @apply tx-border-red-700 #{!important}
 
-  .custom-button
-    @apply rounded-xl px-6 py-3 text-sm font-bold
+  .tx-custom-button
+    @apply tx-rounded-xl tx-px-6 tx-py-3 tx-text-sm tx-font-bold
 
     &[type="button"]:not(.action) 
-      @apply text-primary hover:bg-light-500/20 focus:ring-4 focus:outline-none focus:ring-primary/20 border border-primary px-5 py-2.5 focus:z-10 disabled:bg-light-500/20 disabled:cursor-not-allowed
+      @apply tx-text-primary hover:tx-bg-light-500/20 focus:tx-ring-4 focus:tx-outline-none focus:tx-ring-primary/20 tx-border border-primary tx-px-5 tx-py-2.5 focus:tx-z-10 disabled:tx-bg-light-500/20 disabled:tx-cursor-not-allowed
 
     &[type="submit"], &:is(.action)
-      @apply uppercase text-white bg-primary hover:bg-primary/80 focus:ring-4 focus:outline-none focus:ring-primary/20 disabled:bg-primary/80 disabled:cursor-not-allowed
+      @apply tx-uppercase tx-text-white tx-bg-primary hover:tx-bg-primary/80 focus:tx-ring-4 focus:tx-outline-none focus:tx-ring-primary/20 disabled:tx-bg-primary/80 disabled:tx-cursor-not-allowed
 
-  .custom-button-text
-    @apply transition-all ease-in-out delay-75 duration-100 rounded-lg px-6 py-3 text-sm font-bold text-primary bg-dark-950/5 hover:bg-dark-950/10 cursor-pointer
+  .tx-custom-button-text
+    @apply tx-transition-all tx-ease-in-out tx-delay-75 tx-duration-100 tx-rounded-lg tx-px-6 tx-py-3 tx-text-sm tx-font-bold tx-text-primary tx-bg-dark-950/5 hover:tx-bg-dark-950/10 tx-cursor-pointer
 
-  .check
-    @apply relative cursor-pointer
+  .tx-check
+    @apply tx-relative tx-cursor-pointer
 
     input[type=checkbox]
-      @apply appearance-none rounded-md block w-5 h-5 border border-primary/30 bg-dark-950/10 checked:bg-primary/70 focus:outline focus:outline-2 focus:outline-primary/50 focus:border-primary focus:ring-primary disabled:bg-dark-50/40 disabled:cursor-not-allowed
+      @apply tx-appearance-none tx-rounded-md tx-block tx-w-5 tx-h-5 tx-border tx-border-primary/30 tx-bg-dark-950/10 checked:tx-bg-primary/70 focus:tx-outline focus:tx-outline-2 focus:tx-outline-primary/50 focus:tx-border-primary focus:tx-ring-primary disabled:tx-bg-dark-50/40 disabled:tx-cursor-not-allowed
 
       &:checked ~ i
-        @apply transition-all ease-in-out duration-100 text-white
+        @apply tx-transition-all tx-ease-in-out tx-duration-100 tx-text-white
 
         &
-          animation: zoom-anime 0.3s
+          animation: tx-zoom-anime 0.3s
 
     i
-      @apply transition-all ease-in-out delay-75 duration-100 absolute -top-1.5 text-2xl text-primary/0
+      @apply tx-transition-all tx-ease-in-out tx-delay-75 tx-duration-100 tx-absolute -tx-top-1.5 tx-text-2xl tx-text-primary/0
       &
         left: -2px
 
-  .flag
+  .tx-flag
     width: 25px
     height: 18.75px
     border-radius: 2px
-    @apply drop-shadow-md
+    @apply tx-drop-shadow-md
 
-@keyframes zoom-anime
+@keyframes tx-zoom-anime
   0%, 100%
-    @apply transform scale-100
+    @apply tx-transform tx-scale-100
   50%
-    @apply transform scale-150
+    @apply tx-transform tx-scale-150

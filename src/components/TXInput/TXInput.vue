@@ -42,22 +42,22 @@ onBeforeMount(() => {
 </script>
 
 <template>
-  <label class="field">
+  <label class="tx-field">
     <span v-if="props.required && props.label">{{ props.label }}</span>
     <div v-if="!props.required && props.label">{{ props.label }}</div>
     <i
       :class="[
         icon,
-        { 'cursor-pointer hover:text-primary': props.isShowPassword },
+        { 'tx-cursor-pointer hover:tx-text-primary': props.isShowPassword },
       ]"
     />
     <i
-      class="hidden bi bi-x cursor-pointer hover:text-primary"
+      class="tx-hidden bi bi-x tx-cursor-pointer hover:tx-text-primary"
       :style="{ right: `${props.icon ? 35 : 12}px` }"
     />
     <input
       v-model="inputValue"
-      :class="[{ 'pr-14': props.icon, 'pr-7': !props.icon }]"
+      :class="[{ 'tx-pr-14': props.icon, 'tx-pr-7': !props.icon }]"
       :type="type"
       autocomplete="off"
       :disabled="disabled"
@@ -80,11 +80,11 @@ onBeforeMount(() => {
       @click="emit('onClick', $event)"
     />
     <div
-      class="mt-1 px-2 min-h-[20px] flex flex-col gap-y-2 text-xs font-extralight text-red-700"
+      class="tx-mt-1 tx-px-2 tx-min-h-[20px] tx-flex tx-flex-col tx-gap-y-2 tx-text-xs tx-font-extralight tx-text-red-700"
     >
-      <div class="hidden">{{ props.texts.validateRequired }}</div>
-      <div class="hidden">{{ props.texts.validateEmail }}</div>
-      <div class="hidden">{{ props.texts.validateStrongPassword }}</div>
+      <div class="tx-hidden">{{ props.texts.validateRequired }}</div>
+      <div class="tx-hidden">{{ props.texts.validateEmail }}</div>
+      <div class="tx-hidden">{{ props.texts.validateStrongPassword }}</div>
     </div>
   </label>
 </template>
