@@ -6,8 +6,7 @@ const emit = defineEmits(["update:modelValue", "onFocus", "onBlur", "onClick"]);
 const props = withDefaults(
   defineProps<{
     modelValue?: string | number;
-    validate?: any;
-    submitted?: boolean;
+    invalid?: boolean;
     type?: "text" | "password" | "number";
     label?: string;
     icon?: string;
@@ -15,14 +14,13 @@ const props = withDefaults(
     required?: boolean;
     isShowPassword?: boolean;
     mask?: string;
-    texts: {
-      validateRequired: string;
-      validateEmail: string;
-      validateStrongPassword: string;
-    };
+    minLength?: number;
+    maxLength?: number;
+    minValue?: number;
+    maxValue?: number;
   }>(),
   {
-    submitted: false,
+    invalid: false,
     type: "text",
     disabled: false,
     isShowPassword: false,
@@ -44,12 +42,6 @@ watch(
 watch(inputValue, (val) => {
   emit("update:modelValue", val);
 });
-watch(
-  () => props.submitted,
-  () => {
-    props?.validate?.$touch();
-  }
-);
 
 onBeforeMount(() => {
   if (props.modelValue) {
@@ -65,43 +57,39 @@ onBeforeMount(() => {
     <i
       :class="[
         icon,
-        { 'tx-cursor-pointer hover:tx-text-primary': props.isShowPassword },
+        { 'cursor-pointer hover:text-primary': props.isShowPassword },
       ]"
     />
     <i
-      class="tx-hidden bi bi-x tx-cursor-pointer hover:tx-text-primary"
+      class="hidden bi bi-x cursor-pointer hover:text-primary"
       :style="{ right: `${props.icon ? 35 : 12}px` }"
     />
     <input
       v-model="inputValue"
-      :class="[{ 'tx-pr-14': props.icon, 'tx-pr-7': !props.icon }]"
+      :class="[
+        {
+          'pr-14': props.icon,
+          'pr-7': !props.icon,
+          'tx-error': props.invalid,
+        },
+      ]"
       :type="type"
       autocomplete="off"
       :disabled="disabled"
       v-maska
-      v-bind="
-        Object.assign(
-          validate?.minLength
-            ? { minlength: validate?.minLength.$params.min }
-            : {},
-          validate?.maxLength
-            ? { maxlength: validate?.maxLength.$params.max }
-            : {},
-          validate?.minValue ? { min: validate?.minValue.$params.min } : {},
-          validate?.maxValue ? { max: validate?.maxValue.$params.max } : {},
-          props.mask ? { 'data-maska': props.mask } : {}
-        )
-      "
+      v-bind="{
+        ...$attrs,
+        ...(props.mask ? { 'data-maska': props.mask } : {}),
+      }"
       @focus="runFocus"
       @blur="emit('onBlur', $event)"
       @click="emit('onClick', $event)"
     />
     <div
-      class="tx-mt-1 tx-px-2 tx-min-h-[20px] tx-flex tx-flex-col tx-gap-y-2 tx-text-xs tx-font-extralight tx-text-red-700"
+      v-if="$slots.validate"
+      class="mt-1 px-2 min-h-[20px] flex flex-col gap-y-2 text-xs font-extralight text-red-700"
     >
-      <div class="tx-hidden">{{ props.texts.validateRequired }}</div>
-      <div class="tx-hidden">{{ props.texts.validateEmail }}</div>
-      <div class="tx-hidden">{{ props.texts.validateStrongPassword }}</div>
+      <slot name="validate" />
     </div>
   </label>
 </template>

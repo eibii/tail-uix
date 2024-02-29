@@ -1,3 +1,3 @@
 <template>
-  <div class="tx-text-center tx-py-10 tx-text-2xl">Tail UIX</div>
+  <div class="text-center py-10 text-2xl">Tail UIX</div>
 </template>
