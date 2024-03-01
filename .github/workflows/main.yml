@@ -16,10 +16,9 @@ jobs:
           registry-url: https://registry.npmjs.org/
       - run: npm install
       - uses: semantic-release/semantic-release-action@v3
-        with:
-          github_token: ${{secrets.GITHUB_TOKEN}}
-          npm_token: ${{secrets.NPM_TOKEN}}
       - run: npm run build
       - run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          NPM_TOKEN: ${{secrets.NPM_TOKEN}}
