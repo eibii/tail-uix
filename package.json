@@ -44,6 +44,8 @@
     "vue": "^3.4.19"
   },
   "devDependencies": {
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^9.2.6",
     "@types/node": "^20.11.20",
     "@vitejs/plugin-vue": "^5.0.4",
     "autoprefixer": "^10.4.17",
