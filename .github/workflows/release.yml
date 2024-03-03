@@ -33,10 +33,11 @@ jobs:
         run: |
           git config --global user.name 'Release Bot'
           git config --global user.email 'dev@eibii.com'
-          git push --follow-tags origin main
 
       - name: Standard Version
-        run: npx standard-version
+        run: |
+          npx standard-version
+          git push --follow-tags origin main
 
       - name: Publicar no NPM
         run: npm publish --access public
