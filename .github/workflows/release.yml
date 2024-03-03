@@ -29,14 +29,14 @@ jobs:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
           NPM_TOKEN: ${{secrets.NPM_TOKEN}}
 
-      - name: Standard Version
-        run: npx standard-version
-
       - name: Configurar Git
         run: |
           git config --global user.name 'Release Bot'
           git config --global user.email 'dev@eibii.com'
           git push --follow-tags origin main
+
+      - name: Standard Version
+        run: npx standard-version
 
       - name: Publicar no NPM
         run: npm publish --access public
