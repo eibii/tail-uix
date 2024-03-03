@@ -37,7 +37,6 @@ jobs:
       - name: Standard Version
         run: |
           npx standard-version
-          git push --follow-tags origin main
 
       - name: Publicar no NPM
         run: npm publish --access public
