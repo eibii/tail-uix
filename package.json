@@ -33,6 +33,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && npx tailwindcss -o src/assets/css/build.css --minify && vite build",
+    "postbuild": "node ./scripts/postbuild.js",
     "preview": "vite preview",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
