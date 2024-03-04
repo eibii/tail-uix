@@ -23,10 +23,13 @@ const props = withDefaults(
 <template>
   <button
     :type="props.type"
-    :class="['custom-button flex justify-center', { action: isAction }]"
+    :class="[
+      'tx-custom-button tx-flex tx-justify-center',
+      { action: isAction },
+    ]"
     :disabled="disabled || loading"
   >
-    <div class="flex gap-2 self-center">
+    <div class="tx-flex tx-gap-2 tx-self-center">
       <TXLoading v-if="props.loading" :text="props.loadingText" />
       <span v-if="!props.loading && props.label">{{ props.label }}</span>
       <i v-if="props.icon" :class="props.icon" />
