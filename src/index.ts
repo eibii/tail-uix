@@ -6,6 +6,7 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import {
   TxLoading,
   TxNotify,
+  TxModal,
   TxButton,
   TxButtonText,
   TxInput,
@@ -14,8 +15,9 @@ import {
 // exportação padrão com instalação automática
 export default {
   install(app: App): void {
-    app.component("TxNotify", TxNotify);
     app.component("TxLoading", TxLoading);
+    app.component("TxNotify", TxNotify);
+    app.component("TxModal", TxModal);
     app.component("TxButton", TxButton);
     app.component("TxButtonText", TxButtonText);
     app.component("TxInput", TxInput);
@@ -23,4 +25,12 @@ export default {
   },
 };
 // exportação individual
-export { TxLoading, TxNotify, TxButton, TxButtonText, TxInput, TxCheckbox };
+export {
+  TxLoading,
+  TxNotify,
+  TxModal,
+  TxButton,
+  TxButtonText,
+  TxInput,
+  TxCheckbox,
+};
