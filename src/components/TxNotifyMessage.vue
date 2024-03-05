@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { NotifyMessage } from "./@types";
+import type { NotifyMessage } from "../@types";
 
 import { ref, watch, onMounted } from "vue";
 
@@ -70,31 +70,31 @@ onMounted(() => {
     @mouseover="isPaused = true"
   >
     <div
-      class="tx-absolute tx-bottom-0 tx-left-0 h-1 tx-bg-black/30 tx-rounded-full"
+      class="absolute bottom-0 left-0 h-1 bg-black/30 rounded-full"
       :style="{ width: `${percentAnimate}%` }"
     ></div>
     <!-- Botão de excluir -->
-    <div class="tx-absolute tx-top-1 tx-right-1">
+    <div class="absolute top-1 right-1">
       <i class="tx-close" icon="bi bi-x-circle" @click="onRemoveMessage(idx)" />
     </div>
-    <div class="tx-flex tx-gap-3">
+    <div class="flex gap-3">
       <!-- Ícone -->
-      <div class="tx-flex-none tx-flex tx-items-center tx-text-4xl">
+      <div class="flex-none flex items-center text-4xl">
         <i
           :class="[
             {
-              'tx-text-lime-900': message.status === 'success',
-              'tx-text-red-900': message.status === 'danger',
-              'tx-text-amber-900': message.status === 'warn',
-              'tx-text-sky-900': message.status === 'info',
+              'text-lime-900': message.status === 'success',
+              'text-red-900': message.status === 'danger',
+              'text-amber-900': message.status === 'warn',
+              'text-sky-900': message.status === 'info',
             },
           ]"
           icon="bi bi-exclamation-triangle"
         />
       </div>
-      <div class="tx-flex-1 tx-flex tx-flex-col">
+      <div class="flex-1 flex flex-col">
         <!-- Título -->
-        <div class="tx-title">{{ message.title }}</div>
+        <div class="title">{{ message.title }}</div>
         <!-- Mensagem -->
         <div class="tx-message">
           {{ message.message }}
@@ -106,22 +106,22 @@ onMounted(() => {
 
 <style lang="sass" scoped>
 .tx-notify
-  @apply tx-relative tx-overflow-hidden tx-bg-lime-600/80 tx-border-[0.5px] tx-border-lime-600/80 tx-rounded-lg tx-backdrop-blur-lg tx-w-72 tx-p-2
+  @apply relative overflow-hidden bg-lime-600/80 border-[0.5px] border-lime-600/80 rounded-lg backdrop-blur-lg w-72 p-2
 
   & .tx-close
-    @apply tx-text-white/70 hover:tx-text-white tx-text-[14px] tx-cursor-pointer
+    @apply text-white/70 hover:text-white text-[14px] cursor-pointer
 
   & .tx-title
-    @apply tx-text-sm tx-font-bold tx-text-gray-100
+    @apply text-sm font-bold text-gray-100
 
-  & .message
+  & .tx-message
     @apply text-sm
 .tx-danger
-  @apply tx-bg-red-500/70 tx-border-red-500/80
+  @apply bg-red-500/70 border-red-500/80
 
 .tx-warn
-  @apply tx-bg-amber-500/70 tx-border-amber-500/80
+  @apply bg-amber-500/70 border-amber-500/80
 
 .tx-info
-  @apply tx-bg-sky-500/70 tx-border-sky-500/80
+  @apply bg-sky-500/70 border-sky-500/80
 </style>

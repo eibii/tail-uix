@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { NotifyMessage } from "./@types";
+import type { NotifyMessage } from "../@types";
 
 import * as _ from "lodash-es";
 
