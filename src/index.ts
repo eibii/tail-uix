@@ -4,21 +4,23 @@ import "./assets/sass/tailwind.sass";
 import "bootstrap-icons/font/bootstrap-icons.css";
 
 import {
-  TXInput,
-  TXCheckbox,
-  TXLoading,
-  TXButton,
-  TXButtonText,
+  TxLoading,
+  TxNotify,
+  TxButton,
+  TxButtonText,
+  TxInput,
+  TxCheckbox,
 } from "./components";
 // exportação padrão com instalação automática
 export default {
   install(app: App): void {
-    app.component("TXInput", TXInput);
-    app.component("TXCheckbox", TXCheckbox);
-    app.component("TXLoading", TXLoading);
-    app.component("TXButton", TXButton);
-    app.component("TXButtonText", TXButtonText);
+    app.component("TxNotify", TxNotify);
+    app.component("TxLoading", TxLoading);
+    app.component("TxButton", TxButton);
+    app.component("TxButtonText", TxButtonText);
+    app.component("TxInput", TxInput);
+    app.component("TxCheckbox", TxCheckbox);
   },
 };
 // exportação individual
-export { TXLoading, TXInput, TXCheckbox, TXButton, TXButtonText };
+export { TxLoading, TxNotify, TxButton, TxButtonText, TxInput, TxCheckbox };

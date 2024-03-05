@@ -1,5 +1,6 @@
-export { default as TXLoading } from "./TXLoading.vue";
-export { default as TXButton } from "./TXButton.vue";
-export { default as TXButtonText } from "./TXButtonText.vue";
-export { default as TXInput } from "./TXInput.vue";
-export { default as TXCheckbox } from "./TXCheckbox.vue";
+export { default as TxLoading } from "./TxLoading.vue";
+export { default as TxNotify } from "./TxNotify.vue";
+export { default as TxButton } from "./TxButton.vue";
+export { default as TxButtonText } from "./TxButtonText.vue";
+export { default as TxInput } from "./TxInput.vue";
+export { default as TxCheckbox } from "./TxCheckbox.vue";

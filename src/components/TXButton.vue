@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { TXLoading } from "./";
+import { TxLoading } from "./";
 
 const props = withDefaults(
   defineProps<{
@@ -30,9 +30,10 @@ const props = withDefaults(
     :disabled="disabled || loading"
   >
     <div class="tx-flex tx-gap-2 tx-self-center">
-      <TXLoading v-if="props.loading" :text="props.loadingText" />
+      <TxLoading v-if="props.loading" :text="props.loadingText" />
       <span v-if="!props.loading && props.label">{{ props.label }}</span>
       <i v-if="props.icon" :class="props.icon" />
     </div>
   </button>
 </template>
+.
